@@ -3,10 +3,10 @@
 <p align="center"><b>Generate merchant transaction reports and send them by email or WhatsApp</b></p>
 
 <p align="center">
-  ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
-  ![Platform](https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white)
-  ![Updated](https://img.shields.io/badge/updated-2026-04-18-success)
-  [![Releases](https://img.shields.io/badge/downloads-Releases-blue)](https://github.com/alisadhk/emil-report-mm/releases/latest)
+  <img src="https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/platform-Windows-0078D6?logo=windows&logoColor=white" alt="Platform">
+  <img src="https://img.shields.io/badge/updated-2026--04--18-success" alt="Updated">
+  <a href="https://github.com/alisadhk/emil-report-mm/releases/latest"><img src="https://img.shields.io/badge/downloads-Releases-blue" alt="Releases"></a>
 </p>
 
 ---
@@ -19,8 +19,23 @@ A PyQt6 desktop application that loads transaction data files, builds a report f
 - Per-merchant report generation
 - Send by email or WhatsApp Web
 - Application log panel
+- Reconciles settlement amounts with transaction logs and shows a Match column
+- Batch processing: formatted PDF and Excel reports for hundreds of merchants
+- Omnichannel delivery with Outlook and WhatsApp, including auto-paste of pre-filled message templates
+
+## How it works
+- Load the three input files; the merchant table is built from them.
+- For each merchant the tool computes the totals, builds a formatted report and stores it in the reports folder.
+- The **Send** column opens your mail client or WhatsApp Web, attaches the report and fills the message template.
+- *Report Status* and *Send Status* show what is done and what is pending.
+
+## Requirements
+- Python 3.10+ with PyQt6 and the report libraries from requirements.txt.
+- Your own input files (no sample data is published).
+- Outlook or WhatsApp Web for sending.
 
 ## Screenshots
+<p align="center"><img src="screenshots/overview.png" alt="Merchant Report and Email Tool screenshot" width="720"></p>
 <p align="center"><img src="screenshots/screenshot-1.png" alt="Merchant Report and Email Tool screenshot" width="720"></p>
 
 ## Download and install
@@ -48,6 +63,11 @@ python merchant_report_tool2.py
 ## Configuration and privacy
 - All sensitive values from the original private version (passwords, tokens, license codes, user names, internal IP addresses, personal names and links) were replaced with `*****`.
 - No customer data, reports or spreadsheets are included in this repository.
+
+## Troubleshooting
+- Merchant list stays empty: check that all three files are loaded and use the expected columns.
+- Nothing sent: sign in to WhatsApp Web / Outlook first.
+- The overview image shows a newer build with POS and B2B tabs; this repository contains the earlier script.
 
 ## Build the executable yourself
 ```bash
